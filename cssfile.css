@@ -1,0 +1,49 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100vh;
+ display: flex;
+ background: orange;
+}
+.gameblock{
+  width: 640px;
+   height: 640px;
+   margin: auto;
+   display: flex;
+   flex-wrap: wrap;
+   perspective: 1000px;
+}
+.card-block{
+  width : calc(25% - 10px);
+  height: calc(33.33% - 10px);
+  margin: 5px;
+  position: relative;
+  transform : rotateY(0);
+  transform-style: preserve-3d;
+  transition: transform .2s;
+}
+
+.card-block.flip{
+  transform : rotateY(180deg);
+}
+
+.card-block:active{
+  transform : rotateY(90deg);
+  transition: trasnform .5s;
+}
+.front,
+.rear{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: white;
+    backface-visibility: hidden;
+  }
+.front{
+  transform: rotateY(180deg);
+}
